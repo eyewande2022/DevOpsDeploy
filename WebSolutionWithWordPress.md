@@ -462,66 +462,47 @@ Then we proceed to install the PHP and its dependencies
 We then proceed to list and reset and enable the PHP
 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.094.png)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.095.png)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.096.jpeg)
 
 Install other dependencies of php 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.097.png)
+
 
 Start, enable and set Boolean value for Apache as shown below
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.098.png)
+
 
 Restarting Apache 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.099.png)
+
 
 Apache status and confirm there is no file on the /var/www/html location
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.100.png)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.101.png)
 
 We proceed to create and change directory to WordPress and install it with its dependencies. 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.102.png)
+
 
 Downloading in progress and finally completed .Configure selinux policies as well
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.103.png)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.104.png)
 
 Go back to your database server to complete the installation and configuration.
 
 Installing MySQL on database server, restart, enable and check status
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.105.png)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.106.png)
-
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.107.png)
 
 Configure DB to work with WordPress
 
 We would create a database named wordpress and create my user  with your credentials and ensure you grant all permission and flush out privileges .Once done check the database tables and exit it 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.108.jpeg)
 
 Please note that when we check the user  you would get this 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.109.png)
-
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.110.png)
 
 We need to set the bind address :
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.111.png)
-
 The next step would be to configure WORDPRESS which is the webserver to act as a client to connect to the remote database 
-
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.112.png)
