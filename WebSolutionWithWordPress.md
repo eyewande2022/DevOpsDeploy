@@ -411,21 +411,25 @@ Next step is to create the mount point  .We create a directory called “db”  
 
 We know we created the file but lets check to see if it has any content .As you can see below it has no content 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.084.png)
+![image84](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/6d9743e5-09d0-4cee-b181-878c12e99bbc)
+
 
 Then we mount it  and also confirm If it has been mounted with the  df -h command
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.085.png)
+![image85](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/4c966590-96f9-4b3a-a015-24458fb36741)
 
 (Using blkid command )
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.086.png)
+![image86](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/34a9c29d-ce6f-491d-b362-44dcde4c3545)
 
-The next thing to do is to make sure that the connection is persisted and consistent even after reboot. We would be editing the /etc/fstab file to perform this action and confirm if success with the command below and have a system reload .Also check the df -h command to confirm its there  in the information provided 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.087.png)
+Proceed to make sure that the connection is persisted and consistent even after reboot. We would be editing the /etc/fstab file to perform this action and confirm if success with the command below and have a system reload .Also check the df -h command to confirm its there  in the information provided 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.088.png)
+
+![image87](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/63d851b1-2f43-4df0-a12f-218c98c727ca)
+
+![image88](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/871626db-eb40-4426-923c-9e22456af632)
+
 
 Next step is to install word press on our webserver. 
 
@@ -435,23 +439,28 @@ This installation should be done in the webserver .We have to run an update on t
 
 But before then we have to update both servers as shown below
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.089.jpeg)
+![image89](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/b4415f58-ebd8-42b7-bfbe-1e5b0fec0b7e)
+
 
 We should check the security group of both instances to ensure they are all open to the traffic we want it to be.
 
 We then proceed to install WordPress on our webserver. First ,Install wget,apache and its dependencies 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.090.jpeg)
+![image90](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/1df2d692-bb2b-4619-817c-efbc6ea5cd95)
+
 
 Then we enable and start apache httpd 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.091.png)
+![image91](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/46160f71-fc21-44b8-a5e6-71500b662a40)
+
 
 Then we proceed to install the PHP and its dependencies 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.092.png)
+![image92](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/3c82c424-33b2-48da-8bf9-425ed3cdc3c3)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.093.png)
+
+
+
 
 We then proceed to list and reset and enable the PHP
 
