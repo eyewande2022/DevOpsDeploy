@@ -203,71 +203,85 @@ From this volume group we can now create 2 logical volume which we give to our s
 
 ` `We can add 5g to the apps and logs by using this command for both of them as shown below  and make them 14 gig each .Check and confirm it was implemented successfully
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.040.jpeg)
+![image40](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/13ebb042-224f-4ecf-a187-2744864ddf94)
+
 
 Use pvs to check whats left of the gig size (1.99)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.041.png)
+![image41](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/02b22b4d-50d4-444a-bf9e-be8007213640)
+
 
 And format the 2 logical volumes (command apps and logs) with the mkfs  command
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.042.jpeg)
+![image42](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/b0d70350-bf3c-4392-95ec-3d8a642cfca9)
+
 
 Next, we are creating a mount point for our devices but to create a directory called www. we need confirm it is not  existing already so we type the command below and we can confirm its not there and proceed to create the www directory
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.043.jpeg)
+![image43](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/bc0f4ba4-e666-4213-a601-0798af542d31)
+
 
 We can see the folder and file created .
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.044.jpeg)
+![image44](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/be043970-9f39-4306-97fb-f3a41b704ef0)
+
 
 We create another directory and folder (/home/recovery/logs) and mount the apps-lv device and place it on the directory (/var/www/html)
 
 Please note that mounting means the data exist in both places .But you should always check the existing file to know its empty before performing the mount operation because it might lead to loss of data if you don’t check the file content .
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.045.png)
+![image45](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/46fbe8e4-32e3-41bb-b580-c0a91cc07a58)
+
 
 You can now proceed to mount and use the df -h command 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.046.png)
+![image46](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/68cdc12e-1f53-48ad-bd8e-c2ae53e43702)
 
-We have to check again for the logs file to investigate its content  before mounting .As you can see there are 496 files which could have been lost if we proceed by mounting which makes it very mandatory to check as they are very important 
 
-to our machine .  
+We have to check again for the logs file to investigate its content  before mounting .As you can see there are 496 files which could have been lost if we proceed by mounting which makes it very mandatory to check as they are very important to our machine .  
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.047.jpeg)
+![image47](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/fb49b222-537a-4f5b-b92f-39f1dde47df0)
+
 
 The solution to this is by copying the files in /var/log into  the /home/recovery/log file  and you can confirm it by simply checking its content as shown below
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.048.jpeg)
+![image48](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/ee8df8de-1e10-4943-b7d5-b2597134c7a7)
+
 
 And with this you can see that the folder has been backed up 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.049.jpeg)
+![image49](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/7874d000-dcb8-433d-b205-95c7461f2d73)
+
 
 Proceed to mounting 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.050.png)
+![image50](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/81cb7dd7-3f4d-4f58-828c-2a3568d37a90)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.051.png)
+![image51](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/05159491-07c9-43c4-8a22-9816e100d846)
 
 ` `The command below shows that it has been properly mounted 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.052.png)
+![image52](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/28efee86-92c4-4478-995a-ec67b3bb565d)
+
 
 We should know that the mount is temporary and once the server is rebooted it would loose connection. We should ensure to make the connection persist and that would be by editing the fstab file and adding some crucial command to make it permanently stable
 
 We check the blkid to check the commands we need to populate the fstab
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.053.jpeg)We are going to copy the UUID for the lv-apps and lv -logs and go back to our terminal.
+![image53](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/688178e4-ac3d-4843-a455-d9b234ef59d5)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.054.png)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.055.png)
+We are going to copy the UUID for the lv-apps and lv -logs and go back to our terminal.
+
+![image54](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/a283d94e-106e-4951-a40c-01fc6a2635c6)
+
+![image55](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/979025af-5828-4463-b0ae-77a59da84610)
+
 
 We have update the fstab and also reloaded the daemon 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.056.png)
+![image56](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/19a996f7-cdfc-4b8c-aeb2-8c2f671ddd0d)
+
 
 **DATABASE SERVER PREPARATION**
 
@@ -275,27 +289,32 @@ In this preparation we would launch a red hat instance for the DB server and rep
 
 We would create volume and also take note of the availability zone of the database server and create 3 volumes
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.057.jpeg)
+![image57](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/f6f689f8-792d-4316-bc35-33b9b230e23c)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.058.png)
+![image58](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/dc969191-4c30-4330-86d9-b7654583d4f5)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.059.jpeg)
+![image59](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/5d5f7c1c-7723-4847-aa5e-7b6cf50cfd5e)
+
 
 Select 10 Gib and the availability zone  and click to create volume
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.060.jpeg)
+![image60](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/da7f6177-1865-4372-8787-c2f3e2a66f2e)
 
 Refresh to see all volumes created and name them db1,db2,db3 respectively and see they are available 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.061.png)Then we now attach each of the 3 volumes to the webserver as seen below 
+![image61](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/88e3f688-475c-4d64-b1e4-20aaedbff1eb)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.062.png)
+Then we now attach each of the 3 volumes to the webserver as seen below 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.063.jpeg)
+![image62](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/adf5377c-a6f1-461d-a64d-779f6c0c704d)
+
+![image63](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/d8fee7a8-063d-4128-9a20-47709b43c047)
+
 
 Repeat this steps for the rest of the volumes as seen below and all 3 volumes are now ready for use by the database server
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.064.png)
+![image64](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/528643f7-1195-42b4-b94a-9d70bff208af)
+
 
 **DATABASE SERVER CONFIGURATION**
 
@@ -303,77 +322,92 @@ Open git bash on visual studio code or whichever console is convenient to use. W
 
 We rename the ip address as webserver as seen below.
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.065.png)
+![image65](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/e103509d-7e69-4e5c-9510-cc6598731c5c)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.066.png)
+![image66](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/36cfc062-ec4f-4cf0-b7c7-e8e4f26a645c)
+
 
 Once all volumes have been attached you should run the lsblk command and you would be able to see all the 3 disks that have been created xvdf, xvdg and xvdh
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.067.png)
+![image67](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/3cd093dd-ad42-4a87-a49f-cdfca34de0de)
+
 
 With the df -h command we can see the mount point available 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.068.png)
+![image68](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/73f1705b-b25e-426b-8dab-29b3950e3935)
+
 
 We use the gdisk command as show below , Type “n” to add a new partition,
 
 Choose 1 as the partition number and click enter button for the first and last sector .Enter :8300 for the default file system , 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.069.jpeg)
+![image69](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/3ee118e4-c7d4-468e-9441-28854200b93f)
+
 
 Type “p” to view the partition table. Use “w” to write the table and edit on the disk and type “w” and click enter and type “y” to proceed. Then it can be seen  that the operation was successful. 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.070.jpeg)Type lsblk command to check again and you would see that the xvdf1,xvdg1,xvdh1 files has been created
+![image70](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/8010611c-f910-4ab8-8297-0743715d019f)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.071.png)
+Type lsblk command to check again and you would see that the xvdf1,xvdg1,xvdh1 files has been created
+
+![image71](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/b2e6c3cd-301f-4773-b390-a7572202f91c)
+
 
 Repeat the same steps and create the partition for g and h partitions and the results are shown below
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.072.png)
+![image72](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/87a3e2f9-486b-4ab7-8143-7e2b94df1aab)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.073.png)
+![image73](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/ea5aa0bd-eba5-4129-943b-e0df7f37ba16)
 
 We then proceed to install the lvm2 package. 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.074.jpeg)
+![image74](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/c11f4042-0d4f-447f-a4a9-630909e7186c)
+
 
 Next step is to create a physical volume using the pvcreate command for the xvdf1, xvdg1 and xvdh1 respectively
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.075.png)
+![image75](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/4c85fa4f-9f69-4263-8055-bc97a52de9bd)
+
 
 We use the lsblk command to check the 3 physical volumes created
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.076.png)
+![image76](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/7e3ef4c7-207b-49d9-be68-a15bdfc7365b)
+
 
 Use the pvs command to check the 3 physical volumes.
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.077.png)
+![image77](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/49b22f8c-d869-4704-8265-138d6f78ed61)
+
 
 Volume groups is used to add together all physical volumes and make them whole .We then use the vg-create command to let the 3 physical volume be seen as 1 logical volume and we name is database-vg as shown below
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.078.png)
+![image78](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/f87ca2f3-1157-4c20-8e3e-e9e89f35b734)
+
 
 Use “vgs” to check if it was implemented successfully. 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.079.png)
+![image79](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/ed3c5651-d0d0-494d-a3c9-b086d8da78b0)
+
 
 The reason the VSize is not 30g is because some little amount has been reserved for the disk itself if space is needed in the future 
 
 From this volume group we can now create 2 logical volume which we give to our servers to use on apps and logs and confirm it was implemented successfully
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.080.png)
+![image80](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/84e0080e-5a08-4012-b53b-4d4209c8e476)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.081.png)
+
+![image81](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/a88d442d-b85b-4eed-9a11-92b582cf9490)
+
 
 Use pvs to check what’s left of the gig size (9.99)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.082.png)
+![image82](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/8d9c9131-d2aa-46c1-8eaf-fab89f4935bd)
 
-Next step is to create the mount point  .We create a directory called “db”
 
-and create the file system using the mkfs command  and then mount 
+Next step is to create the mount point  .We create a directory called “db”  and create the file system using the mkfs command  and then mount 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.083.png)
+![image83](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/bbc6bbf1-c2f7-4521-9752-037338672ed7)
+
 
 We know we created the file but lets check to see if it has any content .As you can see below it has no content 
 
