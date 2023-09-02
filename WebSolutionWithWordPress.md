@@ -458,22 +458,29 @@ Then we proceed to install the PHP and its dependencies
 
 ![image92](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/3c82c424-33b2-48da-8bf9-425ed3cdc3c3)
 
+![2023-06-18 05_07_39-ec2-user@ip-172-31-27-66_~](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/e71eab2b-12b7-4976-b9f4-e5445eef2d88)
 
 We then proceed to list and reset and enable the PHP
 
 
+![2023-06-18 05_08_06-ec2-user@ip-172-31-27-66_~](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/d267227c-e6d7-4940-9ee6-d3b5d8434802)
 
+![2023-06-18 05_09_16-ec2-user@ip-172-31-27-66_~](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/6fae4265-b26b-4ce8-a9ed-63d8fe0102ed)
 
+![2023-06-18 05_09_16-ec2-user@ip-172-31-27-66_~](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/7b067826-c0c5-4d62-9005-9a394e35ba33)
 
 Install other dependencies of php 
 
+![2023-06-18 05_10_00-ec2-user@ip-172-31-27-66_~](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/743ca5d3-4679-462f-a829-30d2578ab86b)
 
 
 Start, enable and set Boolean value for Apache as shown below
 
+![2023-06-18 05_11_16-](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/15e80a12-f66d-409f-a3c4-06154403229f)
 
 
 Restarting Apache 
+![2023-06-18 05_16_28-](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/1575164a-ff0f-4aaa-98c6-44bb3bedb0f8)
 
 
 
