@@ -64,50 +64,53 @@ Instances are successfully launched as shown below
 
 Then we name the 2 instance webserver and database respectively .
 
-![Aspose Words 7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8 008](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/2bb10775-b6ed-482b-b998-ae6c30d47cb5)
+![image8](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/0c2a61e2-163a-4f50-8050-d886d4abab0c)
 
-
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.008.png)
-
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.009.png)
+![image9](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/4a1f3670-cff9-41f7-af64-d32af9c065c5)
 
 The public  ip address of both servers are displayed below
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.010.jpeg)
+![image10](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/b4a176cb-8021-43b0-a7cc-01b70662210a)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.011.jpeg)
+![image11](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/43f315b7-8b35-436f-81c5-0fa3d54d40a6)
 
 Click to connect to ssh 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.012.jpeg)
+![image12](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/62f4cdf5-a010-4ecb-a5b9-907e68cc4614)
+
 
 We then proceed to check the availability zone of our server and click add volumes.We are to create 3 volumes
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.013.png)
+![image13](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/30dc83a7-fd9a-4975-aaf4-0f90cba57548)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.014.png)
+![image14](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/09e27961-a264-4221-af60-73713d54972a)
+
 
 Select 10 Gib and the availability zone  and click to create volume
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.015.png)
+![image15](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/f4cda03e-9b5a-487a-982e-8ac1e061683c)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.016.png)
+![image16](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/430099b5-78ac-4063-bc2b-a6e905bb8991)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.017.png)
+![image17](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/5d81902b-eec2-4130-b4d7-500b54c4d919)
+
 
 After creating the 3 volumes we refresh and can see them below.We name them web1,web2,web3 respectively
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.018.png)
+![image18](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/e6eeeac3-7b24-4c1b-b4e8-6b4cef42a906)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.019.png)
+![image19](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/d00295e5-f1da-4153-a772-843fe4330a13)
+
 
 Then we now attach each of the 3 volumes to the webserver as seen below 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.020.jpeg)
+![image20](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/db66c795-621b-4fec-b174-5540b31c951c)
+
 
 All 3 attachments are seen below and are now ready for use 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.021.png)
+![image21](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/f9df83d6-c01a-42ad-8831-48376e48abf6)
+
 
 **WEBSERVER CONFIGURATION**
 
@@ -115,35 +118,44 @@ Open git bash on visual studio code or whichever console is convenient to use. W
 
 We rename the ip address as webserver as seen below
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.022.png)
+![image22](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/466debd5-e2f2-4dbe-b3ee-72ecf51ebbf4)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.023.png)
+![image23](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/caf3c26d-7937-469a-8202-d67f8eaf0210)
 
 Once all volumes have been attached you should run the lsblk command and you would be able to see all the 3 disks that have been created xvdf, xvdg and xvdh
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.024.png)
+![image24](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/a09eddb0-4585-4761-ba15-950cfa6a571c)
 
 With the df -h command we can see the mount point available 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.025.png)
+![image25](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/11c43697-2463-4437-99ff-094a02585218)
+
 
 We have to create a partition on the physical disk. We use the gdisk function to create a single partition on xvdf, xvdg and xvdh.Please note all the devices are stored in /dev .
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.026.jpeg)We use the gdisk command as show below , Type “n” to add a new partition,
+![image26](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/9cedda5d-4cc3-4af9-9725-728ca1f17c01)
+
+
+
+We use the gdisk command as show below , Type “n” to add a new partition,
 
 Choose 1 as the partition number and click enter button for the first and last sector .Enter :8300 for the default file system , 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.027.jpeg)
+![image27](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/2fd56516-b91b-4533-9fb7-0d91d926997f)
+
 
 Type “p” to view the partition table. Use “w” to write the table and edit on the disk and type “w” and click enter and type “y” to proceed.Then it can be seen  that the operation was successful. 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.028.jpeg)
+![image28](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/5cdd2287-c97c-40f0-9578-bfbbe09b3782)
+
 
 Repeat the same steps and create the partition for g and h partitions and the results are shown below
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.029.png)
+![image29](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/84c725ec-83c9-4569-a9e4-8a47c4df9428)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.030.png)
+![image30](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/6151f75a-7281-4bfb-aff3-95e4697fd907)
+
+
 
 Type lsblk command to check again and you would see that the xvdf1,xvdg1,xvdh1 files has been created .
 
