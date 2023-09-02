@@ -1,4 +1,4 @@
-**WEB SOLUTION WITH WORDPRESS**
+# **WEB SOLUTION WITH WORDPRESS**
 
 In this project we would be implementing a basic web solution called WORDPRESS while creating storage infrastructures on 2 Linux servers 
 
