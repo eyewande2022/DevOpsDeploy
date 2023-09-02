@@ -459,10 +459,8 @@ Then we proceed to install the PHP and its dependencies
 ![image92](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/3c82c424-33b2-48da-8bf9-425ed3cdc3c3)
 
 
-
-
-
 We then proceed to list and reset and enable the PHP
+
 
 ![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.094.png)
 
