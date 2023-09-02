@@ -458,58 +458,77 @@ Then we proceed to install the PHP and its dependencies
 
 ![image92](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/3c82c424-33b2-48da-8bf9-425ed3cdc3c3)
 
-![2023-06-18 05_07_39-ec2-user@ip-172-31-27-66_~](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/e71eab2b-12b7-4976-b9f4-e5445eef2d88)
+![image93](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/0b428121-f068-4d73-aaf4-2e1e96a8d7f5)
 
 We then proceed to list and reset and enable the PHP
 
+![image94](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/e24f80e6-fc43-4f9d-bea5-863d806d6af0)
 
-![2023-06-18 05_08_06-ec2-user@ip-172-31-27-66_~](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/d267227c-e6d7-4940-9ee6-d3b5d8434802)
+![image95](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/f9bc94b7-94a8-4934-ab68-c7a82567fffd)
 
-![2023-06-18 05_09_16-ec2-user@ip-172-31-27-66_~](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/6fae4265-b26b-4ce8-a9ed-63d8fe0102ed)
-
-![2023-06-18 05_09_16-ec2-user@ip-172-31-27-66_~](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/7b067826-c0c5-4d62-9005-9a394e35ba33)
-
-Install other dependencies of php 
-
-![2023-06-18 05_10_00-ec2-user@ip-172-31-27-66_~](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/743ca5d3-4679-462f-a829-30d2578ab86b)
+![image96](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/66ffbc21-c045-48ba-adf4-77a109fefe9e)
 
 
 Start, enable and set Boolean value for Apache as shown below
 
-![2023-06-18 05_11_16-](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/15e80a12-f66d-409f-a3c4-06154403229f)
+![image97](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/d4a279e4-fc00-4664-b6a9-02cb91be85f4)
 
+![image98](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/7efbaabd-65c9-45d9-93c7-eb35c8b924dd)
 
 Restarting Apache 
-![2023-06-18 05_16_28-](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/1575164a-ff0f-4aaa-98c6-44bb3bedb0f8)
 
+![image99](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/8d172330-3031-4b67-9ec4-fb270532e551)
 
 
 Apache status and confirm there is no file on the /var/www/html location
 
+![image100](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/84b40a5f-700e-49a4-b13c-6290a9c26da7)
 
+![image101](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/27a47718-6465-45d3-9cbf-a7f79ad12cd1)
 
 We proceed to create and change directory to WordPress and install it with its dependencies. 
 
-
+![image102](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/c5a43661-be0d-4c07-8beb-6dc35491cd35)
 
 Downloading in progress and finally completed .Configure selinux policies as well
 
+![image103](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/341d9053-a2a0-4cbc-8a0d-070da4e5ed89)
 
+![image104](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/d60a57bf-25a1-4a03-be2f-1203215c1b84)
 
 Go back to your database server to complete the installation and configuration.
 
 Installing MySQL on database server, restart, enable and check status
 
+![image105](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/bd34e88b-3d9d-4a5f-a82e-d006662322d0)
+
+![image106](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/cc0731b8-8ee4-463e-9aa9-cdc369a5cd72)
+
+![image107](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/c3d4aafc-5a0e-4787-9866-f005533b2880)
 
 
 Configure DB to work with WordPress
 
-We would create a database named wordpress and create my user  with your credentials and ensure you grant all permission and flush out privileges .Once done check the database tables and exit it 
+We would create a database named wordpress and create my user  with your credentials and ensure you grant all permission and flush out privileges .Once done check the database tables and exit it .
 
+![image108](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/bf1ff8be-2e40-41e7-88eb-45169433abe8)
 
 Please note that when we check the user  you would get this 
 
+![image109](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/b4ab02cf-2219-43fb-b3da-eda5e469e45d)
+
+![image110](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/3d01a7c1-9d08-4b64-aa6c-6bc960abe9ce)
 
 We need to set the bind address :
 
+![image111](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/888bd6d2-be0a-4739-bd3d-2a7c7c525f60)
+
+
 The next step would be to configure WORDPRESS which is the webserver to act as a client to connect to the remote database 
+
+![image112](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/52d02b00-19a0-41a1-8331-7a04761d3f8e)
+
+Launch on the browser 
+![website](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/271b2e95-ca01-4317-b2d6-d235a7d23df6)
+
+
