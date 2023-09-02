@@ -159,39 +159,47 @@ Repeat the same steps and create the partition for g and h partitions and the re
 
 Type lsblk command to check again and you would see that the xvdf1,xvdg1,xvdh1 files has been created .
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.031.png)
+![image31](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/bdd76394-1e15-4bb3-8b51-593e7e25661e)
+
 
 We then proceed to install the lvm2 package. 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.032.jpeg)
+![image32](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/a65cd0d9-7bc7-4df4-9c95-ba32e3f40ee8)
+
 
 Next step is to create a physical volume using the pvcreate command for the xvdf1, xvdg1 and xvdh1 respectively
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.033.png)
+![image33](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/7ecf070c-8e04-4b2a-bce8-ac0dbf69ef18)
+
 
 We use the lsblk command to check the 3 physical volumes created 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.034.png)
+![image34](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/454fe55a-797e-4a09-a8d2-089dce25de96)
+
 
 Use the pvs command to check the 3 physical volumes.
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.035.png)
+![image35](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/174f39ce-fb57-422c-91bf-b774869d5c3d)
+
 
 Volume groups is used to add together all physical volumes andmake them whole .We then use the vg-create command to let the 3 physical volume be seen as 1 logical volume and we name is webdata-vg as shown below
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.036.png)
+![image36](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/444feca1-4f24-4055-af11-579123719838)
+
 
 Use “vgs” to check if it was implemented successfully. 
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.037.png)
+![image37](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/f9204abd-7fef-40cc-866d-71dacbdb702c)
+
 
 The reason the VSize is not 30g is because some little amount has been reserved for the disk itself if space are needed in the future 
 
 From this volume group we can now create 2 logical volume which we give to our servers to use on apps and logs and confirm it was implemented successfully
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.038.png)
+![image38](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/e8e0f90b-4e88-4236-a546-9d1a071d7154)
 
-![](Aspose.Words.7bf68ce5-4ab0-4cd9-8b88-4d9aa92d06b8.039.png)
+![image39](https://github.com/eyewande2022/DevOpsDeploy/assets/116227096/7a5fb5dd-14d6-40dc-b928-fc44b52c39ba)
+
 
 ` `We can add 5g to the apps and logs by using this command for both of them as shown below  and make them 14 gig each .Check and confirm it was implemented successfully
 
